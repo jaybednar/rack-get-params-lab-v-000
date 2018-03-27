@@ -19,7 +19,7 @@ class Application
       item_to_add = req.params["item"]
       resp.write find_and_add(item_to_add)
     elsif req.path.match(/cart/)
-      if !@@cart.empty?
+      if @@cart.empty?
         resp.write "Your cart is empty"
       else
         @@cart.each do |cart_item|
