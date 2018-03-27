@@ -19,10 +19,7 @@ class Application
       item_to_add = req.params["item"]
       resp.write find_and_add(item_to_add)
     elsif req.path.match(/cart/)
-      # binding.pry
-      # show_cart
       if !(@@cart.length == 0)
-        # binding.pry
         @@cart.each do |cart_item|
           resp.write "#{cart_item}\n"
         end
