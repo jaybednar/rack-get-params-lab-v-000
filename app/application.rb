@@ -20,11 +20,11 @@ class Application
       resp.write find_and_add(item_to_add)
     elsif req.path.match(/cart/)
       if !@@cart.empty?
+        resp.write "Your cart is empty"
+      else
         @@cart.each do |cart_item|
           resp.write "#{cart_item}\n"
         end
-      else
-        resp.write "Your cart is empty"
       end
     else
       resp.write "Path Not Found"
